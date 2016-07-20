@@ -1,4 +1,5 @@
-from  flask import Flask
+from flask import Flask, request
+import requests
 
 app = Flask(__name__)
 
@@ -10,4 +11,10 @@ def test():
 
 @app.route("/hook", methods=["POST"])
 def hook():
+    chat_id = requests.get_json()["message"]["chat"]["id"]
+    requests.post("https://api.telegram.org/bot257528811:257528811:AAHbKoS1oPEcq_IQkbQ8YB-VQyoRkYTX9rQ/sendMassage",
+                {
+                    "chat_id": chat_id,
+                    "text": "hi!"
+                })
     return "OK"
