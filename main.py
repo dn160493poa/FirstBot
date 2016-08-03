@@ -13,7 +13,7 @@ def test():
     return "It work"
 
 
-def send (chat_id, text):
+def send(chat_id, text):
     requests.post("https://api.telegram.org/bot257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I/sendMassage",
                   {
                       "chat_id": chat_id,
