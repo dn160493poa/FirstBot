@@ -35,6 +35,7 @@ def hook():
         answer = "\n".join(map(str, db.products.find()))
         send(chat_id, answer)
 
+    send(chat_id, "PONG")
     return "OK"
 
 
