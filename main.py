@@ -45,7 +45,7 @@ def hook():
         send(chat_id, answer)
     if command == "/search":
         for town in allsafes:
-            send(chat_id, town)
+            send(chat_id, town.split())
 
     send(chat_id, "Я могу помочь найти ячейку!")
     return "OK"
