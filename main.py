@@ -19,7 +19,7 @@ Svyatoshinskiy = {}
 Pecherskiy = {}
 Dneprovskiy = {}
 Poznyaku = {}
-allsafes = ("Киев: 32 отделения с ячейками")
+allsafes = {"Киев: 32 отделения с ячейками"}
 
 
 def send(chat_id, text):
