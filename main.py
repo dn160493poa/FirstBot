@@ -13,6 +13,16 @@ def test():
     return "It work"
 
 
+Obolon = {"Декабристов 3": "VIP only", "Дружбы народов 11": "Для всех"}
+Podol = {}
+Svyatoshinskiy = {}
+Pecherskiy = {}
+Dneprovskiy = {}
+Poznyaku = {}
+Kiev = {Obolon: 0, Podol: 0, Svyatoshinskiy: 0, Pecherskiy: 0, Dneprovskiy: 0, Poznyaku: 0}
+allsafes = ("Киев: 32 отделения с ячейками")
+
+
 def send(chat_id, text):
     requests.post("https://api.telegram.org/bot257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I/sendMessage",
                   {
@@ -34,8 +44,11 @@ def hook():
     if command == "/get":
         answer = "\n".join(map(str, db.products.find()))
         send(chat_id, answer)
+    if command == "/search":
+        for town in allsafes:
+            send(chat_id, town)
 
-    send(chat_id, "PONG")
+    send(chat_id, "Я могу помочь найти ячейку!")
     return "OK"
 
 
