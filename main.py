@@ -19,7 +19,6 @@ Svyatoshinskiy = {}
 Pecherskiy = {}
 Dneprovskiy = {}
 Poznyaku = {}
-Kiev = {Obolon: 0, Podol: 0, Svyatoshinskiy: 0, Pecherskiy: 0, Dneprovskiy: 0, Poznyaku: 0}
 allsafes = ("Киев: 32 отделения с ячейками")
 
 
