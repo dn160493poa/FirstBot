@@ -47,7 +47,7 @@ def hook():
     if command == "/get":
         answer = "\n".join(map(str, db.products.find()))
         send(chat_id, answer)
-    if command == "/search":
+    if command == "/искать":
         send(chat_id, Kiev)
         for args in Киев:
             print(args)
