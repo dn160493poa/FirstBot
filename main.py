@@ -50,7 +50,7 @@ def hook():
         send(chat_id, answer)
     if command == "/Киев":
         send(chat_id, Kiev_info)
-        send(chat_id, "https://maps.googleapis.com/maps/api/staticmap?center=50.4116..,30.5284588&zoom=13&size=400x400&markers=color:green%C50.4116455,30.5284588&key=AIzaSyBEbX-HI26eD3euneOEXXphg4xT950UjC0")
+        send(chat_id, "https://maps.googleapis.com/maps/api/staticmap?center=50.4116..,30.5284588&zoom=13&size=100x100&markers=color:green%C50.4116455,30.5284588&key=AIzaSyBEbX-HI26eD3euneOEXXphg4xT950UjC0")
         for dep in Kiev_safes:
             send(chat_id, dep)
 
