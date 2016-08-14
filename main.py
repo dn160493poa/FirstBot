@@ -19,8 +19,9 @@ Svyatoshinskiy = {}
 Pecherskiy = {}
 Dneprovskiy = {}
 Poznyaku = {}
-allsafes = "Киев: 32 отделения с ячейками"
-
+Kiev = "Киев: 32 отделения с ячейками"
+Киев = {"Дружбы народов 2": "VIP", "народного ополчения 4":"VIP"}
+inAll = (Киев)
 
 def send(chat_id, text):
     requests.post("https://api.telegram.org/bot257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I/sendMessage",
@@ -37,6 +38,9 @@ def hook():
 
     command, *args = text.split()
 
+    send(chat_id, "Я могу помочь найти ячейку!")
+    send(chat_id, "Введи /искать и город, вот так: /искать Киев")
+
     if command == "/add":
         db.products.insert({"products": args})
         send(chat_id, "Products add")
@@ -44,9 +48,10 @@ def hook():
         answer = "\n".join(map(str, db.products.find()))
         send(chat_id, answer)
     if command == "/search":
-        send(chat_id, allsafes)
+        send(chat_id, Kiev)
+        for args in Киев:
+            print(args)
 
-    send(chat_id, "Я могу помочь найти ячейку!")
     return "OK"
 
 
