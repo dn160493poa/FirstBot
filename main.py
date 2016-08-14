@@ -19,8 +19,8 @@ Svyatoshinskiy = {}
 Pecherskiy = {}
 Dneprovskiy = {}
 Poznyaku = {}
-Kiev = "Киев: 32 отделения с ячейками"
-Киев = {"Дружбы народов 2": "VIP", "народного ополчения 4":"VIP"}
+Kiev_info = "Киев: 32 отделения с ячейками"
+Kiev_safes = {"Дружбы народов 2": "VIP", "народного ополчения 4":"VIP"}
 inAll = (Киев)
 
 def send(chat_id, text):
@@ -39,7 +39,7 @@ def hook():
     command, *args = text.split()
 
     send(chat_id, "Я могу помочь найти ячейку!")
-    send(chat_id, "Введи /искать и город, вот так: /искать Киев")
+    send(chat_id, "Введи /город  с большой буквы, вот так: /Киев")
 
     if command == "/add":
         db.products.insert({"products": args})
@@ -47,10 +47,10 @@ def hook():
     if command == "/get":
         answer = "\n".join(map(str, db.products.find()))
         send(chat_id, answer)
-    if command == "/искать":
-        send(chat_id, Kiev)
-        for args in Киев:
-            print(args)
+    if command == "/Киев":
+        send(chat_id, Kiev_info)
+        for dep in Kiev_safes:
+            print(dep)
 
     return "OK"
 
