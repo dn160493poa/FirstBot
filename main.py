@@ -21,7 +21,7 @@ Dneprovskiy = {}
 Poznyaku = {}
 Kiev_info = "Киев: 32 отделения с ячейками"
 Kiev_safes = {"Дружбы народов 2": "VIP", "народного ополчения 4":"VIP"}
-inAll = (Киев)
+inAll = (Kiev_safes)
 
 def send(chat_id, text):
     requests.post("https://api.telegram.org/bot257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I/sendMessage",
