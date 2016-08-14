@@ -50,7 +50,7 @@ def hook():
     if command == "/Киев":
         send(chat_id, Kiev_info)
         for dep in Kiev_safes:
-            print(dep)
+            send(chat_id, dep)
 
     return "OK"
 
