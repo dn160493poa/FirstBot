@@ -1,19 +1,27 @@
 from flask import Flask, request
 import requests
 from pymongo import MongoClient
-import telegram
 
 app = Flask(__name__)
 
 client = MongoClient("mongodb://dp160493poa:366619oleg@ds029675.mlab.com:29675/heroku_2hz4q0l0")
 db = client.heroku_2hz4q0l0
 
-bot = telegram.Bot("257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I")
 
 @app.route("/")
 def test():
     return "It work"
 
+
+Obolon = {"Декабристов 3": "VIP only", "Дружбы народов 11": "Для всех"}
+Podol = {}
+Svyatoshinskiy = {}
+Pecherskiy = {}
+Dneprovskiy = {}
+Poznyaku = {}
+Kiev_info = "Киев: 32 отделения с ячейками"
+Kiev_safes = {"Дружбы народов 2": "VIP", "народного ополчения 4":"VIP"}
+inAll = (Kiev_safes)
 
 def send(chat_id, text):
     requests.post("https://api.telegram.org/bot257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I/sendMessage",
@@ -37,17 +45,17 @@ def hook():
         db.products.insert({"products": args})
         send(chat_id, "Products add")
     if command == "/get":
-        answer = ""
-        for doc in db.products.find():
-            answer += str(doc["products"]) + "\n"
+        answer = "\n".join(map(str, db.products.find()))
 
         send(chat_id, answer)
     if command == "/Киев":
-        for dep in db.safes.find():
+        send(chat_id, Kiev_info)
+        send(chat_id, "https://www.google.ru/maps/place/бульвар+Дружби+Народів,+4,+%D0%9A%D0%B8%D1%97%D0%B2,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0/@50.4116455,30.5284588,17z/data=!4m13!1m7!3m6!1s0x40d4cf3f53763da9:0xf6eca58db9696a8a!2z0LHRg9C70YzQstCw0YAg0JTRgNGD0LbQsdC4INCd0LDRgNC-0LTRltCyLCA0LCDQmtC40ZfQsiwg0KPQutGA0LDQuNC90LA!3b1!8m2!3d50.4116455!4d30.5306475!3m4!1s0x40d4cf3f53763da9:0xf6eca58db9696a8a!8m2!3d50.4116455!4d30.5306475")
+        for dep in Kiev_safes:
             send(chat_id, dep)
-    if command == "/go":
-        bot.sendPhoto(chat_id, "url")
 
     return "OK"
+
+
 
 
