@@ -37,6 +37,7 @@ def hook():
             else:
                 break
             continue
+        break
 
     if command == "/add":
         db.products.insert({"products": args})
