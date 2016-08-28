@@ -30,9 +30,14 @@ def hook():
 
     send(chat_id, "Я могу помочь найти ячейку!")
     send(chat_id, "Введите облсть или город с большой буквы, где Вам необхадима ячейка")
-    for safe in db.safes:
+    while False:
+        for safe in db.safes:
             if command == db.safes.find(str, command):
                 send(chat_id, safe)
+            else:
+                break
+            continue
+        break
 
     if command == "/add":
         db.products.insert({"products": args})
