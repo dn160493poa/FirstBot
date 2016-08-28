@@ -34,6 +34,8 @@ def hook():
         for safe in db.safes:
             if command == db.safes.find(str, command):
                 send(chat_id, safe)
+            else:
+                break
 
     if command == "/add":
         db.products.insert({"products": args})
