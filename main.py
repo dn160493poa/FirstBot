@@ -36,6 +36,7 @@ def hook():
                 send(chat_id, safe)
             else:
                 break
+            continue
 
     if command == "/add":
         db.products.insert({"products": args})
