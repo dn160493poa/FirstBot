@@ -31,9 +31,9 @@ def hook():
     send(chat_id, "Я могу помочь найти ячейку!")
     send(chat_id, "Введите облсть или город с большой буквы, где Вам необхадима ячейка")
 
-    for safe in db.safes:
-        if dict.get(db.safes, safe) == command:
-            pass
+    #for safe in db.safes:
+        #if dict.get(db.safes, safe) == command:
+            #send(chat_id, safe)
 
 
     if command == "/add":
