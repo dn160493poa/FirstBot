@@ -33,7 +33,8 @@ def hook():
 
     for safe in db.safes:
         if dict.get(db.safes, safe) == command:
-            send(chat_id, safe)
+            pass
+
 
     if command == "/add":
         db.products.insert({"products": args})
