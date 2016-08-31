@@ -31,10 +31,16 @@ def hook():
     send(chat_id, "Я могу помочь найти ячейку!")
     send(chat_id, "Введите облсть или город с большой буквы, где Вам необхадима ячейка")
 
-    #for safe in db.safes:
-        #if dict.get(db.safes, safe) == command:
-            #send(chat_id, safe)
-
+    for safe in db.safes.find(
+            {"$or": [
+                {"город": command},
+                {"страна": command},
+                {"область": command},
+                {"улица": command},
+                {"район": command}
+            ]}
+    ):
+        send(chat_id, safe["город"] + " " + safe["улица"])
 
     if command == "/add":
         db.products.insert({"products": args})
