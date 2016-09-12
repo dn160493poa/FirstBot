@@ -5,11 +5,12 @@ import telegram
 
 app = Flask(__name__)
 KEY = "257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I"
-bot = telegram.Bot
+
 
 client = MongoClient("mongodb://dp160493poa:366619oleg@ds029675.mlab.com:29675/heroku_2hz4q0l0")
 db = client.heroku_2hz4q0l0
 
+bot = telegram.Bot(KEY)
 
 @app.route("/")
 def test():
@@ -24,7 +25,7 @@ def send(chat_id, text):
                   })
 
 
-def Marker(label, lat, lng, color="red"):
+def marker(label, lat, lng, color="red"):
     return "&markers=size:mid|label:{label}|{lat},{lng}|color={color}".format(
         label=label,
         lat=lat,
