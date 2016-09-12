@@ -12,6 +12,7 @@ db = client.heroku_2hz4q0l0
 
 bot = telegram.Bot(KEY)
 
+
 @app.route("/")
 def test():
     return "It work"
@@ -34,12 +35,8 @@ def Marker(label, lat, lng, color="red"):
     )
 
 
-def map(lat=0.0, lng=0.0, zoom=13, size=100, markers=[]):
+def map(lat=0.0, lng=0.0, zoom=13, size=100):
     url = "https://maps.googleapis.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size={size}x{size}&key=AIzaSyBEbX-HI26eD3euneOEXXphg4xT950UjC0".format(lat=lat, lng=lng, size=size, zoom=zoom)
-
-    for marker in markers:
-        url += marker
-
     return url
 
 
