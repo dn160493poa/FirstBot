@@ -12,7 +12,7 @@ client = MongoClient("mongodb://dp160493poa:366619oleg@ds029675.mlab.com:29675/h
 db = client.heroku_2hz4q0l0
 
 
-bot = telegram.Bot(KEY)
+bot = telegram.Bot(KEY, base_url=None, base_file_url=None)
 
 
 @app.route("/")
