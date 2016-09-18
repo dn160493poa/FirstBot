@@ -17,7 +17,7 @@ def test():
 
 
 def send(chat_id, text):
-    requests.post("https://api.telegram.org/bot{key}/sendMessage".format(key=KEY),
+    requests.post("https://api.telegram.org/bot257528811:AAFBIgIu2o1TsghEHIsLyRt0YjvZXLd2OBI/sendMessage",
                   {
                       "chat_id": chat_id,
                       "text": text
