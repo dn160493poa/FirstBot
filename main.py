@@ -33,8 +33,21 @@ def marker(label, lat, lng, color="red"):
     )
 
 
-def send_photo(chat_id, photo):
-    pass
+def map(lat=0.0, lng=0.0, zoom=13, size=100, markers=[]):
+    url = "https://maps.googleapis.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size={size}x{size}&key=AIzaSyBEbX-HI26eD3euneOEXXphg4xT950UjC0".format(lat=lat, lng=lng, size=size, zoom=zoom)
+
+    for marker in markers:
+        url += marker
+
+    return url
+
+
+def send_photo(chat_id, url):
+    r = requests.post("https://api.telegram.org/bot{key}/sendPhoto".format(key=KEY), json={
+        "chat_id": chat_id,
+        "photo": url
+    })
+    print(r)
 
 
 @app.route("/hook", methods=["POST"])
