@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import telegram
 
 app = Flask(__name__)
-KEY = "257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I"
+KEY = "257528811:AAFBIgIu2o1TsghEHIsLyRt0YjvZXLd2OBI"
 
 
 client = MongoClient("mongodb://dp160493poa:366619oleg@ds029675.mlab.com:29675/heroku_2hz4q0l0")
