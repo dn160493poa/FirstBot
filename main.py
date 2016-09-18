@@ -33,7 +33,7 @@ def marker(label, lat, lng, color="red"):
     )
 
 
-def sendFoto(chat_id, photo):
+def send_photo(chat_id, photo):
     pass
 
 
