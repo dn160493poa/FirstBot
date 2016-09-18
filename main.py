@@ -1,13 +1,12 @@
 from flask import Flask, request
 import requests
-from pymongo import MongoClient
 import telegram
 
 KEY = "257528811:AAE1olpVb7hpblrHVr_fgRhAaloOtJ8oT4I"
 
 app = Flask(__name__)
 
-
+from pymongo import MongoClient
 client = MongoClient("mongodb://dp160493poa:366619oleg@ds029675.mlab.com:29675/heroku_2hz4q0l0")
 db = client.heroku_2hz4q0l0
 
